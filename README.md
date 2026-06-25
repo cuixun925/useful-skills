@@ -7,7 +7,11 @@
 | Skill | 说明 |
 |-------|------|
 | [jd-sign](./jd-sign) | 京东自动签到 - Chrome CDP 方案，支持会话保持和自动重试 |
-| [storage-analyzer](./storage-analyzer) | 磁盘清理工具 |
+| [aihot](./aihot) | AI HOT 资讯查询 - 无需 API Key，直接拉取每日 AI 热点日报 |
+| [hv-analysis](./hv-analysis) | 横纵分析法 - 想搞懂一个产品/公司/概念，丢给它出一份万字 PDF 研究报告 |
+| [khazix-writer](./khazix-writer) | 公众号写作 - 按指定风格写长文，含四层自检体系 + 风格示例库 |
+| [neat-freak](./neat-freak) | 任务收尾整理 - 每次任务跑一遍，把文档/CLAUDE.md/记忆三层全部对齐 |
+| [storage-analyzer](./storage-analyzer) | 磁盘清理 - 扫 Mac/Windows 整机磁盘，三色分级给出清理决策 |
 
 ## 贡献
 
