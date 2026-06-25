@@ -12,6 +12,7 @@
 | [khazix-writer](./khazix-writer) | 公众号写作 - 按指定风格写长文，含四层自检体系 + 风格示例库 |
 | [neat-freak](./neat-freak) | 任务收尾整理 - 每次任务跑一遍，把文档/CLAUDE.md/记忆三层全部对齐 |
 | [storage-analyzer](./storage-analyzer) | 磁盘清理 - 扫 Mac/Windows 整机磁盘，三色分级给出清理决策 |
+| [ksjsb-sign](./ksjsb-sign) | 快手极速版自动赚金币 - ADB 控制安卓手机完成签到/领金币/开宝箱/刷视频，支持一键跑全流程 |
 
 ## 贡献
 
