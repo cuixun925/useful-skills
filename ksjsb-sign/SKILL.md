@@ -188,8 +188,38 @@ ksjsb-sign/
 ├── SKILL.md              # 本文件
 ├── scripts/
 │   ├── ksjsb_auto.py     # 主自动化（签到/宝箱/视频/广告）
-│   └── ksjsb_watch.py    # 视频刷页工具
+│   ├── ksjsb_watch.py    # 视频刷页工具
+│   └── ksjsb_loop.py     # 持续循环跑金币（适合 cron / 任务计划）
 └── references/
-    ├── troubleshooting.md # 踩坑记录
-    └── task-center-ui.md  # 任务中心 UI 元素坐标
+    ├── troubleshooting.md  # 踩坑记录（16 个坑）
+    ├── task-center-ui.md   # 任务中心 UI 元素坐标
+    └── cron-setup.md       # 定时任务配置
 ```
+
+## 持续循环跑（金矿模式）
+
+如果想 24 小时不停跑金币，用 `ksjsb_loop.py`：
+
+```bash
+# 默认每 10 分钟一轮
+python scripts/ksjsb_loop.py
+
+# 自定义间隔
+python scripts/ksjsb_loop.py --interval 5
+
+# 调试用：跑 3 轮后退出
+python scripts/ksjsb_loop.py --max 3
+```
+
+**自动行为：**
+- 设备掉线自动等 60s 重试
+- 任务崩溃自动 force-stop + 重启快手
+- 连续 3 轮无增长 → 进入长间隔等待（任务已做完）
+- 写日志到 `ksjsb_loop.log`
+
+**配合 cron / 任务计划程序：**
+- Linux systemd 持续运行
+- Windows 任务计划程序 - 触发器设为"登录时"，"如果任务失败，按以下频率重新启动：1 分钟"
+- OpenClaw 用 `sessions_spawn` 起子 agent
+
+详细配置见 `references/cron-setup.md`。
